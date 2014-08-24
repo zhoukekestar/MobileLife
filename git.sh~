@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/zhou/github/MobileLife
+cd /home/zhou/github/MobileYourLife
 git add --all
 
 {
@@ -18,5 +18,5 @@ if [ x$1 == x ]
 	done
 fi
 }
-git push https://zhoukekestar:password@github.com/zhoukekestar/MobileLife master
+git push https://zhoukekestar:password@github.com/zhoukekestar/MobileYourLife master
 
