@@ -1,5 +1,7 @@
 #!/bin/bash
-cd /home/zhou/github/MobileYourLife
+cd /home/zhou/github/MobileLife
+# You can change your current path by $. ./xx.sh
+# There is a space between two points.
 git add --all
 
 {
@@ -18,5 +20,5 @@ if [ x$1 == x ]
 	done
 fi
 }
-git push https://zhoukekestar:password@github.com/zhoukekestar/MobileYourLife master
+git push https://zhoukekestar:password@github.com/zhoukekestar/MobileLife master
 

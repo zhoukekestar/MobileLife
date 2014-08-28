@@ -1,5 +1,10 @@
 #!/bin/bash
 cd /home/zhou/github/MobileLife
+# You can change your current path by $. ./xx.sh
+# There is a space between two points.
+
+# You can update your code by $git pull
+
 git add --all
 
 {
