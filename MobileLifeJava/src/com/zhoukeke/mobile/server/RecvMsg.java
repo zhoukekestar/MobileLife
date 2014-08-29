@@ -27,6 +27,13 @@ public class RecvMsg implements Runnable {
 				msg += new String(data);
 
 				System.out.println(msg);
+				
+				if (msg == "" || msg == null || msg.trim().length() == 0)
+				{
+					System.out.println("Socket is closed.");
+					in.close();
+					socket.close();
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
