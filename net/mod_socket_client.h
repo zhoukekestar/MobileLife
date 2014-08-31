@@ -79,6 +79,7 @@ public:
         return true;
     }
 };
+/*
 int main()
 {
 	//SocketClient client(1234, (char*)"127.0.0.1");
@@ -117,3 +118,4 @@ int main()
   
     
 }
+*/

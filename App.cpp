@@ -12,15 +12,10 @@ using namespace std;
 
 int main()
 {
-
-	
-	map<string, string> abc = Setting::getSetting("conf.txt");
-	Setting::showSetting(abc);
-	cout << "---------------" << endl;
-	map<string, string> abd = Setting::getSetting("conf-2.txt");
-	Setting::showSetting(abd);
-	cout << "---------------" << endl;
-	Send s;
-	Recv r;	
+	PipeWrite write_nouse((char*)"./recv.pipe");
+	PipeWrite write((char*)"./send.pipe");
+    PipeRead read((char*)"./recv.pipe", 4000);
+    
+    
 	return 0;
 }
