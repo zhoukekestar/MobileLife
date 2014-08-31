@@ -91,7 +91,6 @@ int main(int argc,char** argv)
     {
         printf("out:%s\n", read.readBlock());
     }
-    
     return 0;
 }
 */
