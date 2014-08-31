@@ -9,9 +9,6 @@
 #include <arpa/inet.h>
 #include <iostream>
 
-#define PORT 1234
-#define SERVER_IP "127.0.0.1"
-
 using namespace std;
 
 class SocketClient
@@ -84,8 +81,8 @@ public:
 };
 int main()
 {
-	SocketClient client(1234, (char*)"127.0.0.1");
-    //SocketClient client(8088, (char*)"192.168.0.222");
+	//SocketClient client(1234, (char*)"127.0.0.1");
+    SocketClient client(1234, (char*)"192.168.1.125");
     pid_t fpid;
     fpid = fork();
     
