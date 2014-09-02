@@ -4,6 +4,8 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Scanner;
 
+import com.mobile.model.Data;
+
 public class SendMsg implements Runnable {
 	private Socket socket;
 
@@ -11,11 +13,18 @@ public class SendMsg implements Runnable {
 	public void run() {
 		try {
 			System.out.println("send running...");
+			OutputStream out = socket.getOutputStream();
 			while (true) {
-
-				Scanner input = new Scanner(System.in);
-				OutputStream out = socket.getOutputStream();
-				String msg = input.nextLine();
+				
+				if (Data.msgList.size() == 0)
+				{
+					//System.out.println("size:0");
+					Thread.sleep(1000);
+					continue;
+				}
+				//System.out.println("size:" + Data.msgList.size());
+				String msg = Data.msgList.get(0);
+				Data.msgList.remove(0);
 				out.write(msg.getBytes());
 				out.flush();
 				System.out.println("client has sent:" + msg);

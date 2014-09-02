@@ -9,11 +9,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketAddress;
 
-public class TcpServer{
+public class TcpServer implements Runnable{
 
 	private static List<Socket> socketList;
 
-	public static void main(String[] args) throws IOException,
+	public static void runit() throws IOException,
 			InterruptedException {
 
 		int servPort = Integer.parseInt("1234");
@@ -32,6 +32,17 @@ public class TcpServer{
 			SendMsg sendMsg = new SendMsg(clntSock);
 			new Thread(sendMsg).start();
 			
+		}
+	}
+
+	@Override
+	public void run() {
+		try {
+			runit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mobile.model.Control;
+import com.mobile.model.Data;
 import com.sun.corba.se.pept.transport.ContactInfo;
 
 
@@ -25,8 +26,11 @@ public class Ctrl extends HttpServlet {
 		ctr.type = request.getParameter("type");
 		ctr.id = request.getParameter("id");
 		ctr.action =	request.getParameter("action");
-		System.out.println(ctr.toString());
 		
+		//System.out.println(ctr.toString());
+		Data.msgList.add(ctr.toString());
+		
+		Data.runServer();
 		
 		String callback = request.getParameter("callback");
 		PrintWriter out = response.getWriter();
