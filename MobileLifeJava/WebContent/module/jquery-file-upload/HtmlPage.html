@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5上传图片预览</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <base href="../../" />
+    <meta charset="utf-8">
+    <link href="module/jquery-file-upload/fileupload.toomao.css" rel="stylesheet" />
+    <script src="http://www.codefans.net/ajaxjs/jquery-1.6.2.min.js"></script>
+    <script>
+
+        $(function () {
+            function createUpload(id) {
+                var selector = "#" + id;
+                $(selector)
+                    .wrap('<div class="upload-btn fileupload-warp"></div>')
+                    .before('<span class="bc">+</span>');
+               
+                $(selector).parent()
+                    .wrap('<div class="file-upload-div-all" id="' + id + '-all"></div>')
+                    .before('<img class="preView" style="display:none" />')
+                    .after('<div class="progress"></div><a class="msg"></a>')
+            }
+            $("#abc").click(function () {
+                createUpload("fileabc")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="abc">abc</div>
+    <input id="fileabc" type="file" name="files[]" multiple>
+</body>
+</html>
