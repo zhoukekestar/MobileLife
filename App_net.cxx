@@ -8,13 +8,25 @@
 #include "net/mod_pipe_w.h"
 #include "net/mod_pipe_r.h"
 
+int length(char* ch)
+{
+	int i = 0;
+	while (*ch != '\0')
+	{
+			i++;
+			ch++;
+			//cout << *ch << endl;
+		}
+	return i;
+}
+
 int main()
 {
 	map<string, string> abc = Setting::getSetting("conf.txt");
 	Setting::showSetting(abc);
 	cout << "---------------" << endl;
 	
-	SocketClient client(1234, (char*)"192.168.1.125");
+	SocketClient client(1234, (char*)"192.168.0.112");
 	PipeWrite write_nouse((char*)"./send.pipe");
 	PipeWrite write((char*)"./recv.pipe");
     PipeRead read((char*)"./send.pipe", 4000);
@@ -32,6 +44,7 @@ int main()
 		while (1)
 		{
 			char* buf = client.recvMsg();
+			cout << "recv:[" << buf << "]" << endl;
 			write.writeBlock(buf);
 		}
 	}
@@ -41,7 +54,9 @@ int main()
 		while (1)
 		{
 			char* buf = read.readBlock();
-			client.sendMsg(buf, sizeof(buf));
+			cout << "send:[" << buf << "]" << endl;
+			
+			client.sendMsg(buf,length(buf));
 		}
 	}
 	return 0;
