@@ -15,7 +15,7 @@ import com.zkk.mobile.model.Data;
 
 
 @SuppressWarnings("serial")
-@WebServlet(name="com_mySSH_servlet_Ctrl", urlPatterns="/ctrl")
+@WebServlet(name="com_zkk_mobile_servlet_Ctrl", urlPatterns="/ctrl")
 public class Ctrl extends HttpServlet {
 
 	@Override
