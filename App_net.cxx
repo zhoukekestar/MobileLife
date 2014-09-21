@@ -1,6 +1,15 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <stdio.h>
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <errno.h>
+#include <fcntl.h>
+
+#include <unistd.h>
+#include <stdlib.h>
 
 #include "Setting.h"
 #include "Utils.h"
@@ -22,11 +31,14 @@ int length(char* ch)
 
 int main()
 {
-	map<string, string> abc = Setting::getSetting("conf.txt");
-	Setting::showSetting(abc);
-	cout << "---------------" << endl;
 	
-	SocketClient client(1234, (char*)"192.168.0.112");
+	map<string, string> abc = Setting::getSetting("conf.txt");
+	
+	cout << "---" << endl;
+	Setting::showSetting(abc);
+	cout << "---" << endl;
+	
+	SocketClient client(atoi(abc["server_port"].c_str()), (char*)(abc["server_ip"].c_str()));
 	PipeWrite write_nouse((char*)"./send.pipe");
 	PipeWrite write((char*)"./recv.pipe");
     PipeRead read((char*)"./send.pipe", 4000);

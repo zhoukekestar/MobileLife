@@ -1,9 +1,7 @@
-abdc=adfasdf
-aa=96897
+
+server_ip=192.168.0.199
+server_port=1234
 
 
-
-aca=aaakjk
-bb=bbc
 
 
