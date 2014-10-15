@@ -16,7 +16,6 @@
 
 <!-- Jquery-Mobile 20140721v1.0.0 by zhoukeke -->
 <link rel="stylesheet" href="module/jquerymobile/jquery.mobile-1.4.3.css" />
-<!-- <link rel="stylesheet" href="module/jquerymobile/jquery.mobile-1.4.3.min.css" /> -->
 <script src="js/jquery.min.js"></script>
 <script src="module/jquerymobile/jquery.mobile-1.4.3.min.js"></script>
 <script src="js/jquery.base.util.js"></script>

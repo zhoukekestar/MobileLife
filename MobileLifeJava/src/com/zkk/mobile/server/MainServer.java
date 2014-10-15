@@ -1,11 +1,9 @@
-package com.zkk.mobile.model;
+package com.zkk.mobile.server;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zkk.mobile.server.TcpServer;
-
-public class Data {
+public class MainServer {
 	public static List<String> msgList = new ArrayList<String>();
 
 	public static TcpServer tcpServer = null;

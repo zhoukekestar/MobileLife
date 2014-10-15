@@ -44,7 +44,7 @@ public class ConfigUtil {
 			}
 			fis = new FileInputStream(file);
 			prop.load(fis);
-			fis.close();// һ��Ҫ���޸�ֵ֮ǰ�ر�fis
+			fis.close();//
 			fos = new FileOutputStream(file);
 			prop.setProperty(key, value);
 			prop.store(fos, "Update '" + key + "' value");

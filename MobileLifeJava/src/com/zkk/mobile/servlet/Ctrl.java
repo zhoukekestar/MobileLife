@@ -9,9 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.corba.se.pept.transport.ContactInfo;
 import com.zkk.mobile.model.Control;
-import com.zkk.mobile.model.Data;
+import com.zkk.mobile.server.MainServer;
 
 
 @SuppressWarnings("serial")
@@ -28,9 +27,7 @@ public class Ctrl extends HttpServlet {
 		ctr.action =	request.getParameter("action");
 		
 		//System.out.println(ctr.toString());
-		Data.msgList.add(ctr.toString());
-		
-		Data.runServer();
+		MainServer.msgList.add(ctr.toString());
 		
 		String callback = request.getParameter("callback");
 		PrintWriter out = response.getWriter();
