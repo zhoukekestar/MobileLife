@@ -64,7 +64,7 @@ public:
 		init();
 	}
 
-	void setFreq(int freq, int time)
+	void setFreq(int freq, double time)
 	{
 		this->set_buzzer_freq(freq);
 		sleep(time);
@@ -80,7 +80,7 @@ public:
 int main(int argc, char **argv)
 {
 	int freq;
-	int time;
+	double time;
 	stringstream ss;
 	stringstream s1;
 	ss << argv[1];
@@ -90,9 +90,17 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		cout << "Input two params: freq, count." << endl;
+		cout << "Input two params: freq, time(s)." << endl;
 		return 0;
 	}
+	if (freq > 2000 || freq < 10 || time <= 0.0 || time > 3.0)
+	{
+		cout << "Params is not in right range.";
+		cout << "Freq is in [10, 2000], Time is in (0, 3]." << endl;
+		return 0;
+	}
+
+
 	CtrlPMW pmw;
 	if (freq != -1)
 		pmw.setFreq(freq, time);

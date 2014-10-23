@@ -55,6 +55,8 @@ public:
 
 
 int main(int argc, char **argv) {
+
+	system("/etc/rc.d/init.d/leds stop");
 	CtrlLED led;
 
 	if (argc != 3)
@@ -72,9 +74,21 @@ int main(int argc, char **argv) {
 	s1 >> ln;
 	s2 << argv[2];
 	s2 >> n;
-	cout << "Lednum:" << ln << "  Switch:" << n << endl;
-	led.ctrl(ln, n);
+	if (ln > -1 && ln < 4 && (n == 0 || n == 1))
+	{
+		cout << "Lednum:" << ln << "  Switch:" << n << endl;
+		led.ctrl(ln, n);
+		cout << "OK!" << endl;
+	}
+	else
+	{
+		cout << "Lednum:" << ln << "  Switch:" << n << endl;
+		cout << "Your params is not right." << endl;
+		cout << "Lednum must be bigger than -1 and samller than 4." << endl;
+		cout << "Switch must be 0 OR 1." << endl;
+	}
 	return 0;
 }
+
 
 

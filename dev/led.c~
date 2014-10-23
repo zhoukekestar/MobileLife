@@ -72,7 +72,10 @@ int main(int argc, char **argv) {
 	s1 >> ln;
 	s2 << argv[2];
 	s2 >> n;
-	cout << "Lednum:" << ln << "  Switch:" << n << endl;
+	if (ln >= 0 && ln < 4 && (n == 0 || n == 1)
+		cout << "Lednum:" << ln << "  Switch:" << n << endl;
+	else
+		cout << "Lednu"	
 	led.ctrl(ln, n);
 	return 0;
 }
