@@ -1,0 +1,9 @@
+
+***LED***
+/etc/rc.d/init.d/leds stop
+/etc/rc.d/init.d/leds start
+
+/usr/bin/led 0 1
+/usr/bin/led 0 0
+
+

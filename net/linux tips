@@ -1,0 +1,15 @@
+
+
+***Pipe***
+Write msg to pipe
+#echo "pipe info " >> xx.pipe
+
+Run program and write msg to a file. Run on background by using "&".
+#./cmd_runer >> cosole.info &
+
+Kill a program 
+#ps 
+#ps -ef | grep xx.name
+
+
+
