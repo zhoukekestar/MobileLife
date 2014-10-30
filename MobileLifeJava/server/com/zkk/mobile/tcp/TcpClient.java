@@ -1,11 +1,8 @@
 package com.zkk.mobile.tcp;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 import com.zkk.mobile.msg.RecvMsg;
 import com.zkk.mobile.msg.SendMsg;

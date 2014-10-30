@@ -3,11 +3,8 @@ package com.zkk.mobile.tcp;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketAddress;
 
 import com.zkk.mobile.config.MobileConfig;
 import com.zkk.mobile.msg.RecvMsg;
