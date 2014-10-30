@@ -1,4 +1,4 @@
-package com.zkk.mobile.server;
+package com.zkk.mobile.msg;
 
 import java.io.InputStream;
 import java.net.Socket;

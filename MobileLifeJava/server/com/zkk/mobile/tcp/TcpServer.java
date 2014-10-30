@@ -1,4 +1,4 @@
-package com.zkk.mobile.server;
+package com.zkk.mobile.tcp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ import java.net.Socket;
 import java.net.SocketAddress;
 
 import com.zkk.mobile.config.MobileConfig;
+import com.zkk.mobile.msg.RecvMsg;
+import com.zkk.mobile.msg.SendMsg;
 
 public class TcpServer implements Runnable{
 

@@ -1,11 +1,11 @@
-package com.zkk.mobile.model;
+package com.zkk.mobile.server;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.zkk.mobile.server.TcpServer;
+import com.zkk.mobile.tcp.TcpServer;
 
-public class Data {
+public class Server {
 	public static List<String> msgList = new ArrayList<String>();
 
 	public static TcpServer tcpServer = null;
@@ -18,6 +18,5 @@ public class Data {
 			tcpServer = new TcpServer();
 			new Thread(tcpServer).start();
 		}
-		
 	}
 }

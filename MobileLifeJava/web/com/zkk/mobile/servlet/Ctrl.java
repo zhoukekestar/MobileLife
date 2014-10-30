@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.corba.se.pept.transport.ContactInfo;
+import com.zkk.mobile.config.DevConfig;
 import com.zkk.mobile.model.Control;
-import com.zkk.mobile.model.Data;
+import com.zkk.mobile.server.Server;
 
 
 @SuppressWarnings("serial")
@@ -22,15 +22,13 @@ public class Ctrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		Control ctr = new Control();
-		ctr.type = request.getParameter("type");
-		ctr.id = request.getParameter("id");
-		ctr.action =	request.getParameter("action");
+		Control ctrl = new Control();
+		ctrl.type = request.getParameter("type");
+		ctrl.id = Integer.valueOf(request.getParameter("id"));
+		ctrl.action =	request.getParameter("action");
 		
-		//System.out.println(ctr.toString());
-		Data.msgList.add(ctr.toString());
-		
-		Data.runServer();
+		System.out.println(getCmd(ctrl));
+		Server.msgList.add(getCmd(ctrl));
 		
 		String callback = request.getParameter("callback");
 		PrintWriter out = response.getWriter();
@@ -38,4 +36,14 @@ public class Ctrl extends HttpServlet {
 		out.flush();
 		out.close();
 	}	
+	
+	private static String getCmd(Control ctrl)
+	{
+		String cmd = DevConfig.ledRoot + " " + String.valueOf(ctrl.id - 1);
+		if (ctrl.action.equals("off"))
+			cmd += " 0";
+		else
+			cmd += " 1";
+		return cmd;
+	}
 }
