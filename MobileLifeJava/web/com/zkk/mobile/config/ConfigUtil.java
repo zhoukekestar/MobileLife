@@ -44,11 +44,7 @@ public class ConfigUtil {
 			}
 			fis = new FileInputStream(file);
 			prop.load(fis);
-<<<<<<< HEAD:MobileLifeJava/web/com/zkk/mobile/config/ConfigUtil.java
 			fis.close();
-=======
-			fis.close();//
->>>>>>> 0b4bd7341c7fc2818aca4df8a5f04307a3d7d7bf:MobileLifeJava/src/com/zkk/mobile/config/ConfigUtil.java
 			fos = new FileOutputStream(file);
 			prop.setProperty(key, value);
 			prop.store(fos, "Update '" + key + "' value");
