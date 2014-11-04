@@ -20,6 +20,8 @@
             <ul data-role="listview" data-inset="true">
                 <li><a href="#index-control-voice" data-transition="flow">声音控制</a></li>
                 <li><a href="#index-control-led" data-transition="flow">LED控制</a></li>
+                <li><a href="#index-info-btn" data-transition="flow">按钮监视</a></li>
+                <li><a href="#index-info-ad" data-transition="flow">Ad输入监视</a></li>
             </ul>
         </div>
         <!-- /content -->
@@ -28,5 +30,7 @@
    
    <%@include file="/web/ctrl-led.jsp"%>
    <%@include file="/web/ctrl-voice.jsp"%>
+   <%@include file="/web/info-ad.jsp"%>
+   <%@include file="/web/info-btn.jsp"%>
 </body>
 </html>

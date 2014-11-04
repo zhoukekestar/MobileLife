@@ -6,22 +6,26 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import com.zkk.mobile.config.MobileConfig;
+import javax.swing.LookAndFeel;
+
+import org.apache.log4j.Logger;
+
+import com.zkk.mobile.config.WebConfig;
 import com.zkk.mobile.msg.RecvMsg;
 import com.zkk.mobile.msg.SendMsg;
+import com.zkk.mobile.server.config.ServerConfig;
 
 public class TcpServer implements Runnable{
 
 	private static List<Socket> socketList;
-
+	private static Logger logger = Logger.getLogger(TcpServer.class);
+	
 	public static void runit() throws IOException,
 			InterruptedException {
 
-		int servPort = Integer.parseInt(MobileConfig.serverPort);
-
-		ServerSocket servSock = new ServerSocket(servPort);
+		ServerSocket servSock = new ServerSocket(ServerConfig.port );
 		socketList = new ArrayList<Socket>();
-		System.out.println("server start.");
+		logger.info("server start.");
 
 		while (true) {
 
