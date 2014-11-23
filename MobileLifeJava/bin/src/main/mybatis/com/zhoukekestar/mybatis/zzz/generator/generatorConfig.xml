@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <classPathEntry location="mysql-connector-java-5.1.22-bin.jar" />  
+  
+  <context id="mybatis" targetRuntime="MyBatis3">  
+  
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+            <property name="suppressDate" value="true" />
+        </commentGenerator>  
+  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
+            connectionURL="jdbc:mysql://localhost:3306/mybatis" userId="root" password="">  
+            <!-- connectionURL="jdbc:mysql://10.64.130.124:3306/mybatis" userId="zkk" password="zkk"> -->
+        </jdbcConnection>  
+  
+        <!-- <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver> -->  
+  
+        <javaModelGenerator targetPackage="com.zhoukekestar.mybatis.auto.model" targetProject="../../../../../">  
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+  
+        <sqlMapGenerator 	targetPackage="com.zhoukekestar.mybatis.auto.mapper" targetProject="../../../../../">  
+            <property name="enableSubPackages" value="true" />  
+        </sqlMapGenerator>  
+  
+        <javaClientGenerator targetPackage="com.zhoukekestar.mybatis.auto.dao" targetProject="../../../../../" type="XMLMAPPER">  
+            <property name="enableSubPackages" value="true" />  
+        </javaClientGenerator>
+  
+		<!-- enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" -->
+        <table tableName="article" domainObjectName="Article">
+        	<generatedKey column="id" sqlStatement="MySql"/>
+        	<!-- <property name="modelOnly" value="true" /> -->
+        </table>
+  		<table tableName="user" domainObjectName="User">
+  			<generatedKey column="id" sqlStatement="MySql"/>
+  			<!-- <property name="modelOnly" value="true" /> -->
+  		</table>
+
+    </context>  
+</generatorConfiguration>

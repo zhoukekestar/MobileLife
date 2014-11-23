@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="../../" />
+
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/standard.css" rel="stylesheet" />
+    <link rel="stylesheet" href="module/jquerymobile/jquery.mobile-1.4.3.css" />
+
+    <style>
+        .ui-corner-none {
+            border: none !important;
+        }
+
+        .ui-icon-gray:after {
+            opacity: .4;
+        }
+    </style>
+</head>
+<body>
+
+    <div data-role="page">
+        <!-- v header -->
+        <div data-role="header">
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                <!--<a href="#" data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-corner-all">返回</a>-->
+                <a href="#" data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext"></a>
+            </div>
+            <h1>标题</h1>
+            <div data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-btn-right">
+                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-plus ui-btn-b">右侧</a>
+                <a href="#" class="ui-shadow ui-btn ui-corner-all ui-btn-icon-left ui-icon-grid ui-btn-b">菜单</a>
+            </div>
+        </div>
+        <!-- ^ header -->
+        <div role="main" class="ui-content">
+            <!-- v botton -->
+            <h1>icons-自定义图标图标</h1>
+            <div>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-wait">      ui-icon-wait</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-car">       ui-icon-car</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-orderlist"> ui-icon-orderlist</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-refound">   ui-icon-refound</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-star-orange">   ui-icon-star-orange</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-star-gray">     ui-icon-star-gray</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-star-half">     ui-icon-star-half</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-heart">         ui-icon-heart</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-shop-activity">         ui-icon-shop-activity</a>
+                <a class="ui-btn ui-btn-icon-left ui-btn-inline ui-icon-shop-share">         ui-icon-shop-share</a>
+                <a href="#" data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-btn-icon-notext ui-btn-inline">213</a>
+            </div>
+            <h1>字体设置</h1>
+            <div>
+                <h1>h1字体 2em</h1>
+                <h2>h2字体 1.5em</h2>
+                <h3>h3字体 1.17em</h3>
+                <h4>h4字体 1em</h4>
+                <h5>h5字体 0.83em</h5>
+                <h6>h6字体 0.67em</h6>
+                
+            </div>
+            <h1>button-按钮</h1>
+            <div>
+                <table border="1">
+                    <thead style="font-weight:bold">
+                        <tr>
+                            <td>
+                                class类
+                            </td>
+                            <td>
+                                说明
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                ui-btn
+                            </td>
+                            <td>
+                                将元素呈现为按钮样式
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ui-btn-inline
+                            </td>
+                            <td>
+                                将按钮显示在同一行，默认为一行
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ui-icon-xxx
+                            </td>
+                            <td>
+                                指定按钮
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ui-btn-icon-left
+                            </td>
+                            <td>
+                                指定图标显示的位置
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ui-state-disabled
+                            </td>
+                            <td>
+                                不能使用的按钮
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <a href="#" class="ui-btn ui-shadow ui-corner-all">一般按钮：显示一行、有阴影、有圆角</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left">左侧图标</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-right ui-state-disabled">disabled</a>
+                <input type="button" data-role="none" value="使用data-role='none'来排除jquery mobile对样式的干扰" class="ui-btn-inline">
+                <a href="#" class="ui-btn ui-btn-inline btn-orange ">btn-orange</a>
+                <a href="#" class="ui-btn ui-btn-inline btn-orange-empty ">btn-orange-empty</a>
+            </div>
+            <div>
+                <fieldset class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow ui-corner-all">使用a标签</a>
+                    </div>
+                    <div class="ui-block-b">
+                        <button class="ui-btn ui-icon-action ui-btn-icon-right ">使用button标签</button>
+                    </div>
+                    <div class="ui-block-c">
+                        <input type="submit" value="使用input标签">
+                    </div>
+                </fieldset>
+            </div>
+            <!-- ^ button -->
+            <h1>check-勾选</h1>
+            <div>
+
+                <fieldset data-role="controlgroup">
+                    <legend>垂直排版</legend>
+                    <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a" checked="checked">
+                    <label for="checkbox-v-2a">默认选中 添加checked属性</label>
+
+                    <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b" disabled="">
+                    <label for="checkbox-v-2b">不能使用 添加disable属性</label>
+
+                    <label>
+                        <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c" >将label作为父标签
+                    </label>
+                </fieldset>
+                <fieldset data-role="controlgroup" data-iconpos="right">
+                    <label>
+                        <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2d">通过指定fieldset的data-iconpos属性，指定图标在右侧
+                    </label>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>水平排版</legend>
+                    <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a">
+                    <label for="checkbox-h-2a">默认</label>
+                    <input type="checkbox" name="checkbox-h-2b" id="checkbox-h-2b" checked="checked">
+                    <label for="checkbox-h-2b">指定选中</label>
+                    <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c" disabled="disabled">
+                    <label for="checkbox-h-2c">指定不能使用</label>
+                </fieldset>
+            </div>
+
+            <h1>radio-单选</h1>
+            <div>
+
+                <fieldset data-role="controlgroup">
+                    <legend>Vertical:</legend>
+                    <input type="radio" name="radio-v-2a" id="radio-v-2a" checked="checked">
+                    <label for="radio-v-2a">默认选中 添加checked属性</label>
+
+                    <input type="radio" name="radio-v-2a" id="radio-v-2b" disabled="">
+                    <label for="radio-v-2b">不能使用 添加disable属性</label>
+
+                    <label>
+                        <input type="radio" name="radio-v-2a" id="radio-v-2c">将label作为父标签
+                    </label>
+                </fieldset>
+                <fieldset data-role="controlgroup" data-iconpos="right">
+                    <label>
+                        <input type="radio" name="radio-v-2a" id="radio-v-2d">通过指定fieldset的data-iconpos属性，指定图标在右侧
+                    </label>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    <legend>水平排版</legend>
+                    <input type="radio" name="radio-h-2a" id="radio-h-2a">
+                    <label for="radio-h-2a">默认</label>
+                    <input type="radio" name="radio-h-2a" id="radio-h-2b" checked="checked">
+                    <label for="radio-h-2b">指定选中</label>
+                    <input type="radio" name="radio-h-2a" id="radio-h-2c" disabled="disabled">
+                    <label for="radio-h-2c">指定不能使用</label>
+                </fieldset>
+            </div>
+            <!--------------------------------------------------------------------------------------------------------->
+            <h1>collapsible-可折叠区域</h1>
+            <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right" id="set">
+                <div data-inset="true" data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                    <h4>标头-指定图标</h4>
+                    <ul data-role="listview">
+                        <li><a href="#">列表1</a></li>
+                        <li><a href="#">列表2</a></li>
+                    </ul>
+                </div>
+                <div data-inset="true" data-role="collapsible" data-collapsed="false" data-iconpos="right">
+                    <h4>指定不折叠</h4>
+                    <ul data-role="listview">
+                        <li><a href="#">默认不折叠-1</a></li>
+                        <li><a href="#">默认不折叠-2</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="collapsible" data-iconpos="left" data-inset="false">
+                <h4>标头-图标在左侧</h4>
+                <ul data-role="listview">
+                    <li><a href="#">列表1</a></li>
+                    <li><a href="#">列表2</a></li>
+                </ul>
+            </div>
+
+            <h1>listview-列表</h1>
+
+            <div>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">这是分组栏，通过data-role='list-divider'指定</li>
+                    <li data-icon="delete"><a href="#">右边的图标通过data-icon='delete'等类似的方法进行设置</a></li>
+                    <li data-icon="false"><a href="#">加上data-icon='false'属性，图标不显示。</a></li>
+
+                    <li data-role="list-divider">分组栏</li>
+                    <li>
+                        <a href="#">
+                            <img src="http://ww2.sinaimg.cn/square/4e5b54d8jw1ej4xbcw8dtj20c80lptak.jpg">
+                            <h2>大标题</h2>
+                            <p>说明，常规的左边有图的列表用该模板</p>
+                        </a>
+                    </li>
+
+                    <li data-role="list-divider">分组栏<span class="ui-li-count">1</span></li>
+                    <li>
+                        <a href="">
+                            <h2>标题</h2>
+                            <p><strong>副标题</strong></p>
+                            <p>常用的，没有图片、有三行说明的用此模板</p>
+                            <p class="ui-li-aside"><strong>小提示</strong>可用于消息数目的显示</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <h1>form-表单</h1>
+            <div>
+                <form>
+                    <ul data-role="listview" data-inset="true">
+                        <li class="ui-field-contain">
+                            <label for="name2">输入说明</label>
+                            <input type="text" name="name2" id="name2" value="" data-clear-btn="true" placeholder="加上data-clear-btn='true'属性，输入时会出现删除按钮">
+                        </li>
+                        <li class="ui-field-contain">
+                            <label for="textarea2">输入多行</label>
+                            <textarea cols="40" rows="8" name="textarea2" id="textarea2"></textarea>
+                        </li>
+                        <li class="ui-field-contain">
+                            <label for="flip2">开关</label>
+                            <select name="flip2" id="flip2" data-role="slider">
+                                <option value="off">关</option>
+                                <option value="on">开</option>
+                            </select>
+                        </li>
+                        <li class="ui-field-contain">
+                            <label for="slider2">滑动条</label>
+                            <input type="range" name="slider2" id="slider2" value="0" min="0" max="100" data-highlight="true">
+                        </li>
+                        <li class="ui-field-contain">
+                            <label for="select-choice-1" class="select">选择说明</label>
+                            <select name="select-choice-1" id="select-choice-1">
+                                <option value="1">选择1</option>
+                                <option value="2">选择2</option>
+                                <option value="3">选择3</option>
+                            </select>
+                        </li>
+                        <li class="ui-body ui-body-b">
+                            <fieldset class="ui-grid-a">
+                                <div class="ui-block-a"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">使用grid来平均分割div</button></div>
+                                <div class="ui-block-b"><button type="submit" class="ui-btn ui-corner-all ui-btn-a">使用block包裹内容</button></div>
+                            </fieldset>
+                        </li>
+                    </ul>
+                </form>
+                <form>
+                    <label for="password-1">Password: data-clear-btn="false"</label>
+                    <input type="password" data-clear-btn="false" name="password-1" id="password-1" value="" autocomplete="off">
+                    <label for="password-2">Password: data-clear-btn="true"</label>
+                    <input type="password" data-clear-btn="true" name="password-2" id="password-2" value="" autocomplete="off">
+                </form>
+            </div>
+
+            <h1>icon-图标</h1>
+            <div>
+                <button class="ui-btn ui-btn-icon-left ui-icon-video">ui-icon-video的图标</button>
+            </div>
+            <div>
+                <p>ui-nodisc-icon:设置图标背景为透明</p>
+                <p>ui-alt-icon:设置图标为黑色，默认为白色</p>
+                <div class="ui-grid-c">
+                    <div class="ui-block-a">
+                        一般的：
+                        <a href="index.html" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete</a>
+                    </div>
+                    <div class="ui-block-b">
+                        包裹ui-nodisc-icon的div后：
+                        <div class="ui-nodisc-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-inline">delete</a>
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        包裹ui-alt-icon的div后
+                        <div class="ui-alt-icon">
+                            <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-inline">Delete</a>
+                        </div>
+                    </div>
+                    <div class="ui-block-d">
+                        同时使用alt-icon和nodisc的：
+                        <div class="ui-alt-icon ui-nodisc-icon">
+                            <a href="#" class="ui-btn  ui-icon-delete ui-btn-icon-notext ui-btn-inline ui-corner-none">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <ul data-role="listview" data-inset="true" class="ui-nodisc-icon ui-alt-icon">
+                <li><a href="#" class="ui-icon-gray">同样适用于列表</a></li>
+                <li><a href="#">默认图标（加alt-icon和nodisc后）</a></li>
+            </ul>
+        </div>
+
+        <h1>panel</h1>
+        <div>
+            <a href="#mypanel-321" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini">Push</a>
+        </div>
+        <div>
+            <a href="#rightpanel2" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini">Push</a>
+        </div>
+        <div data-role="panel" id="mypanel-321" data-position="right" data-display="overlay" data-position-fixed="true">
+            <a href="#my-header" data-rel="close" class="ui-btn ui-corner-all">取消</a>
+            <h1>hello</h1>
+            <h2>world</h2>
+        </div>
+        <!-- rightpanel2  -->
+        <div data-role="panel" id="rightpanel2" data-position="right" data-display="push" data-theme="b">
+            <h3>Right Panel: Push</h3>
+            <p>This panel is positioned on the right with the push display mode. The panel markup is <em>after</em> the header, content and footer in the source order.</p>
+            <p>To close, click off the panel, swipe left or right, hit the Esc key, or use the button below:</p>
+            <a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+        </div><!-- /rightpanel2 -->
+        <h1>popup</h1>
+        <div>
+            <a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-gear ui-btn-icon-left ui-btn-a">Actions...</a>
+            <div data-role="popup" id="popupMenu" data-theme="b">
+                <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                    <li data-role="list-divider">Choose an action</li>
+                    <li><a href="#">View details</a></li>
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Disable</a></li>
+                    <li><a href="#">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>Please sign in</h3>
+                        <label for="un" class="ui-hidden-accessible">Username:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+                        <label for="pw" class="ui-hidden-accessible">Password:</label>
+                        <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                        <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div>
+            <a href="#positionWindow" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window" data-transition="flow">显示在当前窗口重要</a>
+            <a href="#positionOrigin" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="origin" data-transition="slidedown">显示在当前元素之上</a>
+            <a href="#positionSelector" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="#position-header" data-transition="slideup">显示在指定元素之上</a>
+            
+            <div data-role="popup" id="positionWindow" class="ui-content" data-theme="a" data-overlay-theme="b"  data-dismissible="false">
+                <p>窗口中央 并且点击其他地方不会消失，只能刷新当前页面</p>
+            </div>
+            <div data-role="popup" id="positionOrigin" class="ui-content" data-theme="a" data-overlay-theme="b" data-dismissible="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <p>当前元素 可点击叉关闭</p>
+            </div>
+            <div data-role="popup" id="positionSelector" class="ui-content" data-theme="a">
+                <p>指定元素</p>
+            </div>
+            
+        </div>
+        <div>
+            <a href="#positionSelector123" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-transition="flow">弹出层-底部</a>
+
+            <div data-role="popup" id="positionSelector123" class="ui-content" data-theme="a" data-overlay-theme="b" data-position="window-bottom">
+                <p>在引用jquery.base.util.js后,对popup的div添加data-position="window-bottom"即可</p>
+            </div>
+        </div>
+
+        <h1>select-选择列表</h1>
+        <div>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>水平排列</legend>
+                <label for="select-native-11">Select A</label>
+                <select name="select-native-11" id="select-native-11">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-native-12">Select B</label>
+                <select name="select-native-12" id="select-native-12">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-native-13">Select C</label>
+                <select name="select-native-13" id="select-native-13">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset data-role="controlgroup">
+                <legend>默认为垂直排列</legend>
+                <label for="select-native-5">Select A</label>
+                <select name="select-native-5" id="select-native-5">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-native-6">Select B</label>
+                <select name="select-native-6" id="select-native-6">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+                <label for="select-native-7">Select C</label>
+                <select name="select-native-7" id="select-native-7">
+                    <option value="#">One</option>
+                    <option value="#">Two</option>
+                    <option value="#">Three</option>
+                </select>
+            </fieldset>
+        </div>
+        <h1>navbar-导航栏+选项卡</h1>
+        <div data-role="tabs" id="tabs">
+            <div data-role="navbar">
+                <ul>
+                    <li aria-controls="one"><a href="#one" data-ajax="false" class="ui-btn-active">one</a></li>
+                    <li aria-controls="two"><a href="#two" data-ajax="false">two</a></li>
+                    <li aria-controls="one"><a href="ajax-content-ignore.html" data-ajax="false">three</a></li>
+                </ul>
+            </div>
+            <div id="one" class="ui-body-d ui-content">
+                <h1>First tab contents</h1>
+            </div>
+            <div id="two">
+                <ul data-role="listview" data-inset="true">
+                    <li><a href="#">Acura</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Cadillac</a></li>
+                    <li><a href="#">Ferrari</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div style="height:40px;"></div>
+
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="module/jquerymobile/jquery.mobile-1.4.3.js"></script>
+    <script src="js/jquery.base.util.js"></script>
+</body>
+</html>
