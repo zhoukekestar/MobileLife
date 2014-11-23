@@ -2,7 +2,10 @@
     <wb-module deploy-name="MobileLifeJava">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/server"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/mybatis"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/web"/>
         <property name="context-root" value="MobileLifeJava"/>
         <property name="java-output-path" value="/MobileLifeJava/build/classes"/>
     </wb-module>
