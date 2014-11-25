@@ -2,19 +2,16 @@ package com.zhoukekestar.mybatis.zzz.test;
 
 import java.util.List;
 
+import com.zhoukekestar.mybatis.auto.model.Devices;
 import com.zhoukekestar.mybatis.auto.model.User;
 import com.zhoukekestar.mybatis.auto.model.UserExample;
-import com.zhoukekestar.mybatis.dao.impl.UserDaoImpl;
+import com.zhoukekestar.mybatis.dao.impl.DevicesDaoImpl;
 
 public class App {
 	public static void main(String[] args) {
-		UserDaoImpl userDaoImpl = new UserDaoImpl();
-		UserExample example = new UserExample();
-		example.createCriteria().andIdBetween(5, 30);
-		example.or().andUserageEqualTo(100);
-		List<User> list = userDaoImpl.selectByExample(example);
-		for (User user : list) {
-			System.out.println(user.getUsername());
-		}
+		DevicesDaoImpl devicesDaoImpl = new DevicesDaoImpl();
+		Devices devices = devicesDaoImpl.selectByPrimaryKey(10001);
+		System.out.println(devices.getDeviceAlias());
+		
 	}
 }

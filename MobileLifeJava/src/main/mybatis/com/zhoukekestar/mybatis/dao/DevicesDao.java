@@ -1,5 +1,5 @@
 package com.zhoukekestar.mybatis.dao;
 
-public interface UserDao {
+public interface DevicesDao  {
 
 }

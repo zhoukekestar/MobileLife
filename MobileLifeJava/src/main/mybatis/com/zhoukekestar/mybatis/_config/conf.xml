@@ -26,10 +26,13 @@
 	</environments>
 	
 	<mappers>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/DevicesMapper.xml"/>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/LedLogMapper.xml"/>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/ModelsMapper.xml"/>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/ModulesMapper.xml"/>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/OneModelMapper.xml"/>
+		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/UserDeviceMapper.xml"/>
 		<mapper resource="com/zhoukekestar/mybatis/auto/mapper/UserMapper.xml"/>
-<!-- <mapper resource="com/zhoukekestar/mybatis/auto/mapper/UserMapper.xml"/> -->
-		
-	   	<!-- <package name="com.zhoukekestar.mybatis.auto.mapper" /> -->
 	</mappers>
 	 
 </configuration>

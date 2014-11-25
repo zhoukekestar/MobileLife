@@ -11,7 +11,7 @@
         </commentGenerator>  
   
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
-            connectionURL="jdbc:mysql://localhost:3306/mybatis" userId="root" password="">  
+            connectionURL="jdbc:mysql://localhost:3306/mobile_life" userId="root" password="">  
             <!-- connectionURL="jdbc:mysql://10.64.130.124:3306/mybatis" userId="zkk" password="zkk"> -->
         </jdbcConnection>  
   
@@ -33,13 +33,27 @@
         </javaClientGenerator>
   
 		<!-- enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" -->
-        <table tableName="article" domainObjectName="Article">
+        <table tableName="ml_led_log" domainObjectName="LedLog">
         	<generatedKey column="id" sqlStatement="MySql"/>
         	<!-- <property name="modelOnly" value="true" /> -->
         </table>
-  		<table tableName="user" domainObjectName="User">
+  		<table tableName="ml_user" domainObjectName="User">
+  			<generatedKey column="user_id" sqlStatement="MySql"/>
+  		</table>
+  		<table tableName="ml_user_device" domainObjectName="UserDevice">
   			<generatedKey column="id" sqlStatement="MySql"/>
-  			<!-- <property name="modelOnly" value="true" /> -->
+  		</table>
+  		<table tableName="ml_devices" domainObjectName="Devices">
+  			<generatedKey column="device_id" sqlStatement="MySql"/>
+  		</table>
+  		<table tableName="ml_models" domainObjectName="Models">
+  			<generatedKey column="model_id" sqlStatement="MySql"/>
+  		</table>
+  		<table tableName="ml_one_model" domainObjectName="OneModel">
+  			<generatedKey column="id" sqlStatement="MySql"/>
+  		</table>
+  		<table tableName="ml_modules" domainObjectName="Modules">
+  			<generatedKey column="module_id" sqlStatement="MySql"/>
   		</table>
 
     </context>  

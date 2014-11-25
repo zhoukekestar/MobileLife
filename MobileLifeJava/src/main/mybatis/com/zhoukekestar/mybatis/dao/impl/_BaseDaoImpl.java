@@ -1,7 +1,10 @@
 package com.zhoukekestar.mybatis.dao.impl;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+
 import com.zhoukekestar.mybatis.dao._BaseDao;
 import com.zhoukekestar.mybatis.utils.DBUtils;
 
@@ -9,15 +12,22 @@ public class _BaseDaoImpl<T, T2> implements _BaseDao<T, T2> {
 	
 	protected SqlSession session = DBUtils.getSession();
 	private String className;
-	
-	private void init() {
-		className = this.getClass().getName();
-		//if (className == "com.zhoukekestar.mybatis.dao.impl.UserDaoImpl")
-		
-			className = "com.zhoukekestar.mybatis.auto.dao.UserMapper";
-		//System.out.println(className);
-		//System.out.println("com.zhoukekestar.mybatis.auto.dao.UserMapper");
+	static private Map<String, String> classMap;
+	static{
+		classMap = new HashMap<String, String>();
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.DevicesDaoImpl", "com.zhoukekestar.mybatis.auto.dao.DevicesMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.LedLogDaoImpl", "com.zhoukekestar.mybatis.auto.dao.LedLogMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
 	}
+	private void init() {
+		className = classMap.get(this.getClass().getName()).toString();
+	}
+	
 	@Override
 	public int countByExample(T2 example) {
 		init();

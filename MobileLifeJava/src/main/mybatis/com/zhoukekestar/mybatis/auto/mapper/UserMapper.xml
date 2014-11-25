@@ -2,10 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.zhoukekestar.mybatis.auto.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="com.zhoukekestar.mybatis.auto.model.User" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="userName" property="username" jdbcType="VARCHAR" />
-    <result column="userAge" property="userage" jdbcType="INTEGER" />
-    <result column="userAddress" property="useraddress" jdbcType="VARCHAR" />
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="user_passwd" property="userPasswd" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="TINYINT" />
+    <result column="head" property="head" jdbcType="VARCHAR" />
+    <result column="last_login" property="lastLogin" jdbcType="TIMESTAMP" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="TINYINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, userName, userAge, userAddress
+    user_id, nickname, user_passwd, sex, head, last_login, create_time, status
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhoukekestar.mybatis.auto.model.UserExample" >
     select
@@ -74,7 +78,7 @@
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from user
+    from ml_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,78 +89,116 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=INTEGER}
+    from ml_user
+    where user_id = #{userId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from user
-    where id = #{id,jdbcType=INTEGER}
+    delete from ml_user
+    where user_id = #{userId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.zhoukekestar.mybatis.auto.model.UserExample" >
-    delete from user
+    delete from ml_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
   <insert id="insert" parameterType="com.zhoukekestar.mybatis.auto.model.User" >
-    <selectKey resultType="java.lang.Integer" keyProperty="id" order="BEFORE" >
+    <selectKey resultType="java.lang.Integer" keyProperty="userId" order="BEFORE" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into user (id, userName, userAge, 
-      userAddress)
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{userage,jdbcType=INTEGER}, 
-      #{useraddress,jdbcType=VARCHAR})
+    insert into ml_user (user_id, nickname, user_passwd, 
+      sex, head, last_login, 
+      create_time, status)
+    values (#{userId,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{userPasswd,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=TINYINT}, #{head,jdbcType=VARCHAR}, #{lastLogin,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{status,jdbcType=TINYINT})
   </insert>
   <insert id="insertSelective" parameterType="com.zhoukekestar.mybatis.auto.model.User" >
-    <selectKey resultType="java.lang.Integer" keyProperty="id" order="BEFORE" >
+    <selectKey resultType="java.lang.Integer" keyProperty="userId" order="BEFORE" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into user
+    insert into ml_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      id,
-      <if test="username != null" >
-        userName,
+      user_id,
+      <if test="nickname != null" >
+        nickname,
       </if>
-      <if test="userage != null" >
-        userAge,
+      <if test="userPasswd != null" >
+        user_passwd,
       </if>
-      <if test="useraddress != null" >
-        userAddress,
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="head != null" >
+        head,
+      </if>
+      <if test="lastLogin != null" >
+        last_login,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="status != null" >
+        status,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      #{id,jdbcType=INTEGER},
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
+      #{userId,jdbcType=INTEGER},
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
       </if>
-      <if test="userage != null" >
-        #{userage,jdbcType=INTEGER},
+      <if test="userPasswd != null" >
+        #{userPasswd,jdbcType=VARCHAR},
       </if>
-      <if test="useraddress != null" >
-        #{useraddress,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="head != null" >
+        #{head,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null" >
+        #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
       </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.zhoukekestar.mybatis.auto.model.UserExample" resultType="java.lang.Integer" >
-    select count(*) from user
+    select count(*) from ml_user
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update user
+    update ml_user
     <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.username != null" >
-        userName = #{record.username,jdbcType=VARCHAR},
+      <if test="record.nickname != null" >
+        nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
-      <if test="record.userage != null" >
-        userAge = #{record.userage,jdbcType=INTEGER},
+      <if test="record.userPasswd != null" >
+        user_passwd = #{record.userPasswd,jdbcType=VARCHAR},
       </if>
-      <if test="record.useraddress != null" >
-        userAddress = #{record.useraddress,jdbcType=VARCHAR},
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=TINYINT},
+      </if>
+      <if test="record.head != null" >
+        head = #{record.head,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastLogin != null" >
+        last_login = #{record.lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=TINYINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -164,35 +206,55 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update user
-    set id = #{record.id,jdbcType=INTEGER},
-      userName = #{record.username,jdbcType=VARCHAR},
-      userAge = #{record.userage,jdbcType=INTEGER},
-      userAddress = #{record.useraddress,jdbcType=VARCHAR}
+    update ml_user
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      nickname = #{record.nickname,jdbcType=VARCHAR},
+      user_passwd = #{record.userPasswd,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=TINYINT},
+      head = #{record.head,jdbcType=VARCHAR},
+      last_login = #{record.lastLogin,jdbcType=TIMESTAMP},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=TINYINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.zhoukekestar.mybatis.auto.model.User" >
-    update user
+    update ml_user
     <set >
-      <if test="username != null" >
-        userName = #{username,jdbcType=VARCHAR},
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
       </if>
-      <if test="userage != null" >
-        userAge = #{userage,jdbcType=INTEGER},
+      <if test="userPasswd != null" >
+        user_passwd = #{userPasswd,jdbcType=VARCHAR},
       </if>
-      <if test="useraddress != null" >
-        userAddress = #{useraddress,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=TINYINT},
+      </if>
+      <if test="head != null" >
+        head = #{head,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLogin != null" >
+        last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.zhoukekestar.mybatis.auto.model.User" >
-    update user
-    set userName = #{username,jdbcType=VARCHAR},
-      userAge = #{userage,jdbcType=INTEGER},
-      userAddress = #{useraddress,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    update ml_user
+    set nickname = #{nickname,jdbcType=VARCHAR},
+      user_passwd = #{userPasswd,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=TINYINT},
+      head = #{head,jdbcType=VARCHAR},
+      last_login = #{lastLogin,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=TINYINT}
+    where user_id = #{userId,jdbcType=INTEGER}
   </update>
 </mapper>
