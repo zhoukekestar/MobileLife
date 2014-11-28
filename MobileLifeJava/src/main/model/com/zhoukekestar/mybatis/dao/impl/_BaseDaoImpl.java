@@ -17,12 +17,11 @@ public class _BaseDaoImpl<T, T2> implements _BaseDao<T, T2> {
 		classMap = new HashMap<String, String>();
 		classMap.put("com.zhoukekestar.mybatis.dao.impl.DevicesDaoImpl", "com.zhoukekestar.mybatis.auto.dao.DevicesMapper");
 		classMap.put("com.zhoukekestar.mybatis.dao.impl.LedLogDaoImpl", "com.zhoukekestar.mybatis.auto.dao.LedLogMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.ModelsDaoImpl", "com.zhoukekestar.mybatis.auto.dao.ModelsMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.ModulesDaoImpl", "com.zhoukekestar.mybatis.auto.dao.ModulesMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.OneModelDaoImpl", "com.zhoukekestar.mybatis.auto.dao.OneModelMapper");
 		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
-		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
-		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
-		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
-		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
-		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserMapper");
+		classMap.put("com.zhoukekestar.mybatis.dao.impl.UserDeviceDaoImpl", "com.zhoukekestar.mybatis.auto.dao.UserDeviceMapper");
 	}
 	private void init() {
 		className = classMap.get(this.getClass().getName()).toString();
