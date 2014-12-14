@@ -64,7 +64,6 @@ public class GreetingController {
     public String aopC() throws Exception
     {
     	System.out.println("c-begin-------------------");
-    	
     	myService.c();
     	System.out.println("c-end---------------------");
     	return "hi-c";
