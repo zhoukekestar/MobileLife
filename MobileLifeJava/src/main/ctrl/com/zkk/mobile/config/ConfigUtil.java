@@ -71,7 +71,8 @@ public class ConfigUtil {
         try {
 	        in = new FileInputStream(filePath);
 	        pps.load(in);
-	        Enumeration en = pps.propertyNames(); 
+	        @SuppressWarnings("rawtypes")
+			Enumeration en = pps.propertyNames(); 
 	        
 	        while(en.hasMoreElements()) {
 	            String strKey = (String) en.nextElement();
@@ -92,6 +93,7 @@ public class ConfigUtil {
         return map;
     }
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		//System.out.println(ConfigUtil.getProperty("zkk", "F:/eclipse/session/src/App/test.properties"));
 		//ConfigUtil.writeProperty("zkk","zkkzkk", "F:/eclipse/session/src/App/zkk.properties");

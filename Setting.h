@@ -36,11 +36,4 @@ public:
 		}
 		return setting;
 	}
-	
-	static void showSetting(map<string, string> in)
-	{
-		map<string, string>::iterator it;
-		for (it = in.begin(); it != in.end(); it++)
-			cout << (*it).first << " -> " << (*it).second << endl;
-	}
 };
