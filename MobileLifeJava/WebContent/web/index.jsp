@@ -25,6 +25,20 @@
             </ul>
         </div>
         <!-- /content -->
+        
+        <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="a" id="login-form">
+	        <form class="userform">
+	            <h2>登陆</h2>
+	            <label for="name">用户名:</label>
+	            <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+	            <label for="password">密码:</label>
+	            <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+	            <div class="ui-grid-a">
+	                <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+	                <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Login</a></div>
+	            </div>
+	        </form>
+    	</div>
     </div>
     <!-- /page -->
    

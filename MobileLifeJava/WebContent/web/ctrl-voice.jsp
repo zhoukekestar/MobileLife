@@ -14,23 +14,18 @@
 		class="ui-content ui-page-header-fixed ui-page-footer-fixed">
 		<ul data-role="listview" data-inset="true">
 			<li class="ui-field-contain">
+				<img src="/MobileLifeJava/images/voice.gif">
 				<label for="flip2">声音</label> 
-				<input type="range" name="slider2" class="slide" id="slider231" value="0" min="0" max="100" data-highlight="true" onchange="console.log($(this).val());">
-			</li>
-			<li class="ui-field-contain">
-				<label for="send-pmw"></label>
-				<button id="send-pmw">发送</button>
+				<input type="range" name="slider2" class="slide" id="slider231" value="0" min="0" max="100" data-highlight="true" onchange="send($(this).val());">
 			</li>
 		</ul>
 	</div>
 	<script>
-            $(function () {
-                $("#send-pmw").click(function(){
-                	console.log($("#abc").val());
-                	console.log($("#slider231").val());
-                });
-            })
-        </script>
+		function send(val)
+		{
+			console.log("音量：" + val);
+		}
+    </script>
 	<!-- /content -->
 </div>
 <!-- /page -->
