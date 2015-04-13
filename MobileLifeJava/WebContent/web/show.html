@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src=""></script>
+<style>
+	.light{
+	height: 50px;
+width: 50px;
+background-color: #f00;
+margin: 10px;
+float: left;
+background-size: 100%;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div id="light-1" class="light" style="background-image:url(../on.png)"></div>
+		<div id="light-2" class="light" style="background-image:url(../on.png)"></div>
+		<div id="light-3" class="light" style="background-image:url(../on.png)"></div>
+		<div id="light-4" class="light" style="background-image:url(../on.png)"></div>
+	</div>
+	<script>
+		setInterval(function(){
+			
+			for (var i = 1, max = 4; i <= max; i = i + 1) {
+				var v = localStorage["LED_" + i]; 
+				if (v == undefined || v == 0) {
+					console.log(i + ": off");
+					document.getElementById("light-" + i).style.backgroundImage="url(../off.png)";
+				} else {
+					console.log(i + ": on");
+					document.getElementById("light-" + i).style.backgroundImage="url(../on.png)";
+				}
+			}
+			
+		}, 100);
+	</script>
+</body>
+</html>
